@@ -78,8 +78,8 @@ export const checkoutProductVariantFragment = gql`
       attributes {
         attribute {
           id
-          slug
           name
+          slug
         }
         values {
           id
