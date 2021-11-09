@@ -383,6 +383,7 @@ export interface RemoveCheckoutPromoCode_checkoutRemovePromoCode_checkout_lines_
    * Name of an attribute displayed in the interface.
    */
   name: string | null;
+  slug: string | null;
 }
 
 export interface RemoveCheckoutPromoCode_checkoutRemovePromoCode_checkout_lines_variant_attributes_values {
@@ -439,6 +440,7 @@ export interface RemoveCheckoutPromoCode_checkoutRemovePromoCode_checkout_lines_
    * The ID of the object.
    */
   id: string;
+  slug: string | null;
   isShippingRequired: boolean;
 }
 

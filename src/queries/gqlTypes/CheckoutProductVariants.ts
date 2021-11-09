@@ -105,6 +105,7 @@ export interface CheckoutProductVariants_productVariants_edges_node_attributes_a
    * Name of an attribute displayed in the interface.
    */
   name: string | null;
+  slug: string | null;
 }
 
 export interface CheckoutProductVariants_productVariants_edges_node_attributes_values {
@@ -161,6 +162,7 @@ export interface CheckoutProductVariants_productVariants_edges_node_product_prod
    * The ID of the object.
    */
   id: string;
+  slug: string | null;
   isShippingRequired: boolean;
 }
 

@@ -400,6 +400,7 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpd
    * Name of an attribute displayed in the interface.
    */
   name: string | null;
+  slug: string | null;
 }
 
 export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpdate_checkout_lines_variant_attributes_values {
@@ -456,6 +457,7 @@ export interface UpdateCheckoutBillingAddressWithEmail_checkoutBillingAddressUpd
    * The ID of the object.
    */
   id: string;
+  slug: string | null;
   isShippingRequired: boolean;
 }
 

@@ -141,6 +141,7 @@ export interface CheckoutLine_variant_attributes_attribute {
    * Name of an attribute displayed in the interface.
    */
   name: string | null;
+  slug: string | null;
 }
 
 export interface CheckoutLine_variant_attributes_values {

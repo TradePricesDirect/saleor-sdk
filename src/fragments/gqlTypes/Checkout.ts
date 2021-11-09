@@ -381,6 +381,7 @@ export interface Checkout_lines_variant_attributes_attribute {
    * Name of an attribute displayed in the interface.
    */
   name: string | null;
+  slug: string | null;
 }
 
 export interface Checkout_lines_variant_attributes_values {
@@ -437,6 +438,7 @@ export interface Checkout_lines_variant_product_productType {
    * The ID of the object.
    */
   id: string;
+  slug: string | null;
   isShippingRequired: boolean;
 }
 
