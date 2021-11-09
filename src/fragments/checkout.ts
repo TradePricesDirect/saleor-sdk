@@ -80,6 +80,11 @@ export const checkoutProductVariantFragment = gql`
         slug
         isShippingRequired
       }
+      collections {
+        id
+        name
+        slug
+      }
     }
   }
 `;
