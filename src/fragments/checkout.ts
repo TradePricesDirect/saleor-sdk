@@ -75,6 +75,19 @@ export const checkoutProductVariantFragment = gql`
       thumbnail2x: thumbnail(size: 510) {
         url
       }
+      attributes {
+        attribute {
+          id
+          slug
+          name
+        }
+        values {
+          id
+          name
+          slug
+          value: name
+        }
+      }
       productType {
         id
         slug
