@@ -83,6 +83,9 @@ export class SaleorCheckoutAPI extends ErrorListener {
           promoCodeDiscount,
           metadata,
         } = checkout || {};
+
+        console.log(metadata);
+
         this.checkout = {
           billingAddress,
           email,
