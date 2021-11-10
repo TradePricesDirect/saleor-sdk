@@ -84,7 +84,7 @@ export class SaleorCheckoutAPI extends ErrorListener {
           metadata,
         } = checkout || {};
 
-        console.log(metadata);
+        console.log(checkout);
 
         this.checkout = {
           billingAddress,
