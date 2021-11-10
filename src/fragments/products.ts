@@ -30,7 +30,6 @@ export const selectedAttributeFragment = gql`
     values {
       id
       name
-      inputType
       file {
         url
       }
