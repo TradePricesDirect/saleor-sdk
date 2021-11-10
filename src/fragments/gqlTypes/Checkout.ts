@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { MetadataFilter } from "src";
+
 // ====================================================
 // GraphQL fragment: Checkout
 // ====================================================
@@ -594,4 +596,8 @@ export interface Checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: Checkout_availablePaymentGateways[];
+  /**
+   * Key value of metadata
+   */
+  metadata?: (MetadataFilter | null)[] | null
 }
