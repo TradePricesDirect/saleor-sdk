@@ -17,6 +17,14 @@ export const baseProductFragment = gql`
     thumbnail2x: thumbnail(size: 510) {
       url
     }
+    productType {
+      id
+      hasVariants
+    }
+    defaultVariant {
+      id
+      name
+    }
   }
 `;
 
