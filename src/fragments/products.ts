@@ -121,6 +121,14 @@ export const productFragment = gql`
               name
               slug
             }
+            variants {
+              id
+            }
+            defaultVariant {
+              id
+              name
+              quantityAvailable
+            }
           }
         }
       }
