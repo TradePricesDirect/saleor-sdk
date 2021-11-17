@@ -29,6 +29,14 @@ export const productList = gql`
         node {
           ...BaseProduct
           ...ProductPricingField
+          variants {
+            id
+          }
+          defaultVariant {
+            id
+            name
+            quantityAvailable
+          }
         }
       }
       totalCount
