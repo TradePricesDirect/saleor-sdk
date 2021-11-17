@@ -24,6 +24,7 @@ export const baseProductFragment = gql`
     defaultVariant {
       id
       name
+      quantityAvailable
     }
   }
 `;
