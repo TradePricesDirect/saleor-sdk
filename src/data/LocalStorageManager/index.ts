@@ -56,11 +56,13 @@ export class LocalStorageManager {
     let alteredLines = lines;
 
     for (const { variantId, quantity } of items) {
-      let variantInCheckout = lines.find(
+      let variantInCheckout = alteredLines.find(
         variant => variant.variant.id === variantId
       );
 
-      alteredLines = lines.filter(variant => variant.variant.id !== variantId);
+      alteredLines = alteredLines.filter(
+        variant => variant.variant.id !== variantId
+      );
 
       const newVariantQuantity = variantInCheckout
         ? variantInCheckout.quantity + quantity
