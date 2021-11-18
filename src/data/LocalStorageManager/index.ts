@@ -120,6 +120,38 @@ export class LocalStorageManager {
     return alteredCheckout;
   };
 
+  removeItemsFromCart = (items: []) => {
+    const lines = this.saleorState.checkout?.lines || [];
+    let alteredLines = lines;
+
+    for (const variantId of items) {
+      const variantInCheckout = lines.find(
+        variant => variant.variant.id === variantId
+      );
+
+      alteredLines = alteredLines.filter(
+        variant => variant.variant.id !== variantId
+      );
+
+      if (variantInCheckout && this.saleorState.checkout) {
+        variantInCheckout.quantity = 0;
+        alteredLines.push(variantInCheckout);
+      }
+    }
+
+    const alteredCheckout = this.saleorState.checkout
+      ? {
+          ...this.saleorState.checkout,
+          lines: alteredLines,
+        }
+      : {
+          lines: alteredLines,
+        };
+    this.handler.setCheckout(alteredCheckout);
+
+    return alteredCheckout;
+  };
+
   subtractItemFromCart = (variantId: string) => {
     const lines = this.saleorState.checkout?.lines || [];
     const variantFromCart = lines.find(

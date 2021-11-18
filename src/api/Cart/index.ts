@@ -187,6 +187,39 @@ export class SaleorCartAPI extends ErrorListener {
     };
   };
 
+  removeItems = async (items: []) => {
+    // 1. save in local storage
+    this.localStorageManager.removeItemsFromCart(items);
+    // 2. save online if possible (if checkout id available)
+    if (this.saleorState.checkout?.lines) {
+      const {
+        data,
+        error,
+      } = await this.apolloClientManager.getRefreshedCheckoutLines(
+        this.saleorState.checkout.lines,
+        this.config.channel
+      );
+
+      if (error) {
+        this.fireError(error, ErrorCartTypes.SET_CART_ITEM);
+      } else {
+        this.localStorageManager.getHandler().setCheckout({
+          ...this.saleorState.checkout,
+          lines: data,
+        });
+      }
+    }
+    if (this.saleorState.checkout?.id) {
+      this.jobsManager.addToQueue("cart", "setCartItem");
+      return {
+        pending: true,
+      };
+    }
+    return {
+      pending: false,
+    };
+  };
+
   subtractItem = async (variantId: string) => {
     // 1. save in local storage
     this.localStorageManager.subtractItemFromCart(variantId);
