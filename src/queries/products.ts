@@ -47,6 +47,37 @@ export const productList = gql`
   }
 `;
 
+export const productListMinimal = gql`
+  ${pageInfo}
+  query ProductListMinimal(
+    $after: String
+    $first: Int!
+    $sortBy: ProductOrder
+    $filter: ProductFilterInput
+    $channel: String
+  ) {
+    products(
+      after: $after
+      first: $first
+      sortBy: $sortBy
+      filter: $filter
+      channel: $channel
+    ) {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+      totalCount
+      pageInfo {
+        ...PageInfo
+      }
+    }
+  }
+`;
+
 export const productDetails = gql`
   ${productFragment}
   query ProductDetails(

@@ -8,7 +8,7 @@ import {
   ProductListVariables,
   ProductList_products_edges_node,
 } from "../../queries/gqlTypes/ProductList";
-import { productList } from "../../queries/products";
+import { productListMinimal } from "../../queries/products";
 
 export class ProductList extends BaseList<
   ProductListQuery,
@@ -28,7 +28,7 @@ export class ProductList extends BaseList<
 
   query = (variables: ProductListVariables) =>
     this.client!.query<ProductListQuery, ProductListVariables>({
-      query: productList,
+      query: productListMinimal,
       variables,
     });
 }
