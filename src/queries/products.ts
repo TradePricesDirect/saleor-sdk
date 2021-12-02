@@ -68,6 +68,10 @@ export const productListMinimal = gql`
           id
           name
           slug
+          productType {
+            id
+            slug
+          }
         }
       }
       totalCount
