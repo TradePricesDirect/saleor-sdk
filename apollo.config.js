@@ -1,13 +1,10 @@
 module.exports = {
   client: {
-    includes: [
-      "./src/queries/*.ts",
-      "./src/mutations/*.ts",
-      "./src/fragments/*.ts",
-    ],
+    includes: ["src/**/*.ts"],
+    name: "sdk",
     service: {
+      localSchemaFile: "schema.graphql",
       name: "saleor",
-      url: "http://localhost:8000/graphql/",
     },
   },
 };
