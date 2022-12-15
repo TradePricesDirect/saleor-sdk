@@ -7,7 +7,7 @@ export const baseCategoryFragment = gql`
     slug
     seoDescription
     seoTitle
-    featured: metafield(key: "featured")
+    metadata
   }
 `;
 
