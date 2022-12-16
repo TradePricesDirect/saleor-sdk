@@ -7,6 +7,7 @@
 // GraphQL fragment: BaseCategory
 // ====================================================
 
+import { MetadataFilter } from "src";
 export interface BaseCategory {
   __typename: "Category";
   /**
@@ -17,4 +18,5 @@ export interface BaseCategory {
   slug: string;
   seoDescription: string | null;
   seoTitle: string | null;
+  metadata?: (MetadataFilter | null)[] | null
 }

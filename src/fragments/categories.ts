@@ -7,6 +7,10 @@ export const baseCategoryFragment = gql`
     slug
     seoDescription
     seoTitle
+    metadata {
+      key
+      value
+    }
   }
 `;
 
